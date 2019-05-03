@@ -7,11 +7,11 @@ void Eyes_Iddle(){
 }
 
 void Eyes_Sum() {
-  blinkColor(155, 155, 155);  // white
+  blinkColor(155, 100, 155);  // white blinking
 }
 
 void Eyes_Error(){
-  blinkColor(255, 0, 0);  // red
+  blinkColor(255, 0, 0);  // red blinking
 }
 
 void Eyes_Accept(){
@@ -19,7 +19,7 @@ void Eyes_Accept(){
 }
 
 void Eyes_Warning(){
-  blinkColor(80, 0, 80);  // purple
+  blinkColor(80, 0, 80);  // purple blinking
 }
 
 

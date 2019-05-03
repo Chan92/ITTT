@@ -54,8 +54,8 @@ Servo servoMain; // Define our Servo
 //Led variables
 Chrono eyeChrono;
 int rgbRed = 10;
-int rgbGreen = 11;
-int rgbBlue = 12;
+int rgbGreen = 12;
+int rgbBlue = 11;
 int blueLed = 13;
 
 //uncomment this line if using a Common Anode LED
@@ -77,7 +77,8 @@ void setup() {
 
   //servo
   servoMain.attach(2);
-
+  CloseLock();
+  
   //leds
   pinMode(rgbRed, OUTPUT);
   pinMode(rgbGreen, OUTPUT);
@@ -87,7 +88,10 @@ void setup() {
 
 void loop() {
  Key();
- IrCheck(); 
- CheckState();
+// IrCheck(); 
  BlueLeds();
+
+ if (robotState == 0) { 
+  CheckState();
+ }
 }

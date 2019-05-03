@@ -78,7 +78,7 @@ void LCD_RejectCode(){
 }
 
 void LCD_CancelCode(){
-  if (lcdChrono.hasPassed(5000)){
+  if (lcdChrono.hasPassed(500)){
     lcdChrono.restart();
     lcd.clear();
     lcd.setCursor(0,0);
@@ -89,7 +89,7 @@ void LCD_CancelCode(){
 }
 
 void LCD_NotLocking(){
-  if (lcdChrono.hasPassed(5000)){
+  if (lcdChrono.hasPassed(500)){
     lcdChrono.restart();
     lcd.clear();
     lcd.setCursor(0,0);

@@ -31,9 +31,11 @@ void IrCheck(){
 void IrDetected(){
   if (stable < 10) {
     robotState = 1;
+    CheckState();
     if (lcdChrono.hasPassed(1000)){
       lcdChrono.restart();
       robotState = 2;
+      CheckState();
     }
   }
 }

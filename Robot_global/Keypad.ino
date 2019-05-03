@@ -3,6 +3,7 @@ void Key(){
   if (customKey){
     lastKey = customKey;
 
+    //start math sum
     if(robotState == 0 && customKey == '*'){
       if (lcdChrono.hasPassed(500)){
         lcdChrono.restart();
@@ -11,17 +12,25 @@ void Key(){
       }
     }
 
+    //cancel code
     if(robotState == 2 && customKey == '*'){
-      Debugging2();
+      //Debugging2();
       if (lcdChrono.hasPassed(500)){
         lcdChrono.restart();
         robotState = 5;
         CheckState();
+
+         if (lcdChrono.hasPassed(500)){
+          lcdChrono.restart();
+          robotState = 0;
+          CheckState();
+         }
       }
     }
 
+    //right code
     if(robotState == 2 && customKey == lockCodeChr){
-      Debugging2();
+      //Debugging2();
       if (lcdChrono.hasPassed(500)){
         lcdChrono.restart();
         robotState = 3;
@@ -29,20 +38,34 @@ void Key(){
       }
     }
 
+    //wrong code
     if(robotState == 2 && customKey != lockCodeChr){
-      Debugging2();
+      //Debugging2();
       if (lcdChrono.hasPassed(500)){
         lcdChrono.restart();
         robotState = 4;
         CheckState();
+
+        if (lcdChrono.hasPassed(500)){
+          lcdChrono.restart();
+          robotState = 2;
+          CheckState();
+         }
       }
     }
 
+    //locking the robot
     if(robotState == 3 && customKey == '#'){
       if (lcdChrono.hasPassed(500)){
         lcdChrono.restart();
         robotState = 7;
         CheckState();
+
+        if (lcdChrono.hasPassed(500)){
+          lcdChrono.restart();
+          robotState = 0;
+          CheckState();
+         }
       }
     }
   }
