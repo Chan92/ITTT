@@ -1,21 +1,21 @@
 void LCD_Iddle(){
   if (lcdChrono.hasPassed(5000)){
     lcdChrono.restart();  
-    char textArr0A[16] = "You are"; 
-    char textArr1A[16] = "Lets play!";
-    char textArr2A[16] = "Dont forget"; 
-  
-    char * textArrA[] = {
+    String textArr0A = "You are"; 
+    String textArr1A = "Lets play!";
+    String textArr2A = "Dont forget"; 
+    
+    String textArrA[3] = {
       textArr0A,
       textArr1A,
       textArr2A
     };
   
-    char textArr0B[16] = "my best friend"; 
-    char textArr1B[16] = " ";
-    char textArr2B[16] = "to feed me"; 
+    String textArr0B = "my best friend"; 
+    String textArr1B = " ";
+    String textArr2B = "to feed me"; 
   
-     char * textArrB[] = {
+    String textArrB[3] = {
       textArr0B,
       textArr1B,
       textArr2B
@@ -28,6 +28,7 @@ void LCD_Iddle(){
     lcd.print(textArrA[randomText]);
     lcd.setCursor(0,1);
     lcd.print(textArrB[randomText]);
+    Serial.println("LCD_new iddle text");
   }
 }
 
@@ -36,9 +37,10 @@ void LCD_Eat(){
     lcdChrono.restart();
     lcd.clear();
     lcd.setCursor(0,0);
-    lcd.print("Yum (:");
+    lcd.print(F("Yum (:"));
     lcd.setCursor(0,1);
-    lcd.print("Thank you <3");
+    lcd.print(F("Thank you <3"));
+    Serial.println("LCD_eat text");
   }
 }
 
@@ -49,9 +51,10 @@ void LCD_Sum(){
   
     lcd.clear();
     lcd.setCursor(0,0);
-    lcd.print("Answer the code:");
+    lcd.print(F("Answer the code:"));
     lcd.setCursor(0,1);
     lcd.print("x + " + sumStr + " = ?");
+    Serial.println("LCD_sum text");
   }
 }
 
@@ -60,9 +63,10 @@ void LCD_AcceptCode(){
     lcdChrono.restart();
     lcd.clear();
     lcd.setCursor(0,0);
-    lcd.print("Look I kept your");
+    lcd.print(F("Look I kept your"));
     lcd.setCursor(0,1);
-    lcd.print("treasure safe");
+    lcd.print(F("treasure safe"));
+    Serial.println("LCD_accept code text");
   }
 }
 
@@ -71,9 +75,10 @@ void LCD_RejectCode(){
     lcdChrono.restart();
     lcd.clear();
     lcd.setCursor(0,0);
-    lcd.print("Please try again");
+    lcd.print(F("Please try again"));
     lcd.setCursor(0,1);
-    lcd.print(" ");
+    lcd.print(F(" "));
+    Serial.println("LCD_reject code text");
   }
 }
 
@@ -82,9 +87,10 @@ void LCD_CancelCode(){
     lcdChrono.restart();
     lcd.clear();
     lcd.setCursor(0,0);
-    lcd.print("I see");
+    lcd.print(F("I see"));
     lcd.setCursor(0,1);
-    lcd.print("until next time");
+    lcd.print(F("until next time"));
+    Serial.println("LCD_cancel code text");
   }
 }
 
@@ -93,9 +99,10 @@ void LCD_NotLocking(){
     lcdChrono.restart();
     lcd.clear();
     lcd.setCursor(0,0);
-    lcd.print("Hello?");
+    lcd.print(F("Hello?"));
     lcd.setCursor(0,1);
-    lcd.print("Dont forget to lock me");
+    lcd.print(F("Dont forget to lock me"));
+    Serial.println("LCD_not locking text");
   }
 }
 
@@ -104,8 +111,9 @@ void LCD_Locking(){
     lcdChrono.restart();
     lcd.clear();
     lcd.setCursor(0,0);
-    lcd.print("Ok");
+    lcd.print(F("Ok"));
     lcd.setCursor(0,1);
-    lcd.print("I will protect it");
+    lcd.print(F("I will protect it"));
+    Serial.println("LCD_locking text");
   }
 }

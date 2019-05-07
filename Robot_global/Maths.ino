@@ -8,5 +8,7 @@ void RandomMath(){
   
     sumStr = String(randomCode);
     sumStr.toCharArray(sumChar, 16);
+    
+    Serial.println("Maths_Generate math");
   }
 }

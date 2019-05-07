@@ -24,7 +24,7 @@ void IrCheck(){
     stable = abs(stable);        //Ensures the value to be positive
   
     IrDetected();
-    //DebuggingPrint();
+    DebuggingPrint();
   }
 }
 
@@ -32,10 +32,12 @@ void IrDetected(){
   if (stable < 10) {
     robotState = 1;
     CheckState();
+    Serial.println("Infrared_Set state = 1");
     if (lcdChrono.hasPassed(1000)){
       lcdChrono.restart();
       robotState = 2;
       CheckState();
+      Serial.println("Infrared_Set state = 2");
     }
   }
 }
