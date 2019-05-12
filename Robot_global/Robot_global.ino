@@ -13,7 +13,6 @@ int secretCode = 0;
 int randomCode = 0;
 int lockCode = 0;
 String lockStr;
-char lockCodeChr[5];
 String sumStr;
 char sumChar[16];
 
@@ -37,7 +36,6 @@ char hexaKeys[ROWS][COLS] = {
 byte rowPins[ROWS] = {9, 8, 7, 6}; 
 byte colPins[COLS] = {5, 4, 3}; 
 char customKey;
-char lastKey;
 
 Keypad customKeypad = Keypad(makeKeymap(hexaKeys), rowPins, colPins, ROWS, COLS); 
 
@@ -90,10 +88,9 @@ void loop() {
  Key();
  //IrCheck(); 
  BlueLeds();
- //Serial.println("Global_Looping: Key(), IrCheck(), BlueLeds()");
 
  if (robotState == 0) { 
   CheckState();
-   Serial.println("Global_State = 0");
+   //Serial.println("Global_State = 0");
  }
 }

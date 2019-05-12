@@ -4,8 +4,7 @@ void RandomMath(){
     randomCode = random(0, 10);
     lockCode = secretCode + randomCode;
     lockStr = String(lockCode);
-    lockStr.toCharArray(lockCodeChr,5);
-  
+
     sumStr = String(randomCode);
     sumStr.toCharArray(sumChar, 16);
     
