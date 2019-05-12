@@ -88,9 +88,9 @@ void setup() {
 
 void loop() {
  Key();
- IrCheck(); 
+ //IrCheck(); 
  BlueLeds();
- Serial.println("Global_Looping: Key(), IrCheck(), BlueLeds()");
+ //Serial.println("Global_Looping: Key(), IrCheck(), BlueLeds()");
 
  if (robotState == 0) { 
   CheckState();

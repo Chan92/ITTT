@@ -15,6 +15,7 @@ void Key(){
 
     //cancel code
     if(robotState == 2 && customKey == '*'){
+      Serial.print("Keypad_CancelCode__");
       Debugging2();
       if (lcdChrono.hasPassed(500)){
         lcdChrono.restart();
@@ -33,6 +34,7 @@ void Key(){
 
     //right code
     if(robotState == 2 && customKey == lockCodeChr){
+      Serial.print("Keypad_RightCode__");
       Debugging2();
       if (lcdChrono.hasPassed(500)){
         lcdChrono.restart();
@@ -44,6 +46,7 @@ void Key(){
 
     //wrong code
     if(robotState == 2 && customKey != lockCodeChr){
+      Serial.print("Keypad_WrongCode__");
       Debugging2();
       if (lcdChrono.hasPassed(500)){
         lcdChrono.restart();
@@ -77,7 +80,7 @@ void Key(){
       }
     }
   }
-  DebuggingKeys();
+  //DebuggingKeys();
 }
 
 void DebuggingKeys(){
@@ -91,9 +94,9 @@ void DebuggingKeys(){
 }
 
 void Debugging2(){
-  Serial.print("Keypad_:lastKey: \t:");
+  Serial.print("lastKey:");
   Serial.print(lastKey);
-  Serial.print(":lockcode: \t:");
+  Serial.print(": \tlockcode:");
   Serial.print(lockCodeChr);
   Serial.println(":");
 }

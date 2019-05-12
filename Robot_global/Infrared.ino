@@ -29,11 +29,11 @@ void IrCheck(){
 }
 
 void IrDetected(){
-  if (stable < 10) {
+  if (stable < 4) {
     robotState = 1;
     CheckState();
     Serial.println("Infrared_Set state = 1");
-    if (lcdChrono.hasPassed(1000)){
+    if (lcdChrono.hasPassed(1000)){ 
       lcdChrono.restart();
       robotState = 2;
       CheckState();
@@ -43,7 +43,7 @@ void IrDetected(){
 }
 
 void DebuggingPrint(){
-  Serial.print(raw);           //noise+signal/Serial.print("\t");
+  Serial.print(raw);           //noise+signal
   Serial.print("\t");
   Serial.print(noice);         //noise
   Serial.print("\t");
