@@ -33,12 +33,11 @@ void IrDetected(){
     robotState = 1;
     CheckState();
     Serial.println("Infrared_Set state = 1");
-    if (lcdChrono.hasPassed(1000)){ 
-      lcdChrono.restart();
-      robotState = 2;
-      CheckState();
-      Serial.println("Infrared_Set state = 2");
-    }
+
+    delay(5000);
+    robotState = 2;
+    CheckState();
+    Serial.println("Infrared_Set state = 2");
   }
 }
 

@@ -41,6 +41,7 @@ Keypad customKeypad = Keypad(makeKeymap(hexaKeys), rowPins, colPins, ROWS, COLS)
 
 //LCD variables
 Chrono lcdChrono;
+Chrono lcdChrono2;
 Chrono mathChrono;
 //thris row can differ depending on which i2c you have, use a i2c scanner
 LiquidCrystal_I2C lcd(0x3F, 2, 1, 0, 4, 5, 6, 7, 3, POSITIVE);
@@ -89,7 +90,7 @@ void loop() {
  //IrCheck(); 
  BlueLeds();
 
- if (robotState == 0) { 
+ if (robotState == 0 || robotState == 6) { 
   CheckState();
    //Serial.println("Global_State = 0");
  }

@@ -62,7 +62,7 @@ void Key(){
     }
 
     //locking the robot
-    if(robotState == 3 && customKeyStr == "#"){
+    if((robotState == 3 || robotState == 6) && customKeyStr == "#"){
       if (lcdChrono.hasPassed(500)){
         lcdChrono.restart();
         robotState = 7;

@@ -21,13 +21,19 @@ void LCD_Iddle(){
       textArr2B
     };
   
-    int randomText = random(0, 4);
+    int randomText = random(0, 3);
 
     lcd.clear();
     lcd.setCursor(0,0);
     lcd.print(textArrA[randomText]);
     lcd.setCursor(0,1);
     lcd.print(textArrB[randomText]);
+    
+    //Serial.print(randomText);
+    //Serial.print(">>  ");
+    //Serial.print(textArrA[randomText]);
+    //Serial.print("  -   ");
+    //Serial.println(textArrB[randomText]);
     Serial.println("LCD_new iddle text");
   }
 }
@@ -59,61 +65,53 @@ void LCD_Sum(){
 }
 
 void LCD_AcceptCode(){
-  if (lcdChrono.hasPassed(500)){
-    lcdChrono.restart();
     lcd.clear();
     lcd.setCursor(0,0);
     lcd.print(F("Look I kept your"));
     lcd.setCursor(0,1);
     lcd.print(F("treasure safe"));
     Serial.println("LCD_accept code text");
-  }
+
+    lcdChrono2.restart();
+    robotState = 6;
+    CheckState();
 }
 
 void LCD_RejectCode(){
-  if (lcdChrono.hasPassed(500)){
-    lcdChrono.restart();
     lcd.clear();
     lcd.setCursor(0,0);
     lcd.print(F("Please try again"));
     lcd.setCursor(0,1);
     lcd.print(F(" "));
     Serial.println("LCD_reject code text");
-  }
 }
 
 void LCD_CancelCode(){
-  if (lcdChrono.hasPassed(500)){
-    lcdChrono.restart();
     lcd.clear();
     lcd.setCursor(0,0);
     lcd.print(F("I see"));
     lcd.setCursor(0,1);
     lcd.print(F("until next time"));
     Serial.println("LCD_cancel code text");
-  }
 }
 
 void LCD_NotLocking(){
-  if (lcdChrono.hasPassed(500)){
-    lcdChrono.restart();
+  if (lcdChrono2.hasPassed(5000)){
+    lcdChrono2.restart();
     lcd.clear();
     lcd.setCursor(0,0);
-    lcd.print(F("Hello?"));
+    lcd.print(F("Dont forget"));
     lcd.setCursor(0,1);
-    lcd.print(F("Dont forget to lock me"));
+    lcd.print(F("to lock me"));
     Serial.println("LCD_not locking text");
   }
 }
 
 void LCD_Locking(){
-  if (lcdChrono.hasPassed(500)){
-    lcdChrono.restart();
     lcd.clear();
     lcd.setCursor(0,0);
-    lcd.print(F("Ok"));
+    lcd.print(F("Ok I will"));
     lcd.setCursor(0,1);
-    lcd.print(F("I will protect it"));
+    lcd.print(F("protect it"));
     Serial.println("LCD_locking text");
-  }
 }

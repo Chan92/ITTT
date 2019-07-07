@@ -40,7 +40,7 @@ void CheckState() {
     default:
       LCD_Iddle();
       Eyes_Iddle();
-      Serial.println("State_Case default");
+      //Serial.println("State_Case default");
       break;
   }
 }
